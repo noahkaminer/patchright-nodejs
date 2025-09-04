@@ -1,9 +1,14 @@
 {
-  "name": "@noahkaminer/patchright",
+  "name": "@sheer/patchright",
   "version": "0.1.0",
-  "repository": "git@github.com:noahkaminer/patchright-nodejs.git",
   "publishConfig": {
     "registry": "https://us-central1-npm.pkg.dev/sheer-health-scratch/npm-repo/"
+  },
+  "scripts": {
+    "release:prep": "scripts/bootstrap_build_rebrand.sh",
+    "release:auth": "npx --yes google-artifactregistry-auth --project sheer-health-scratch --location us-central1 --repo npm-repo --scope @sheer",
+    "release:publish": "cd playwright/packages/patchright && pnpm publish --no-git-checks",
+    "release:gar": "pnpm run release:prep && pnpm run release:auth && pnpm run release:publish"
   },
   "devDependencies": {
     "ts-morph": "^23.0.0",
