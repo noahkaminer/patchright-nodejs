@@ -25,7 +25,7 @@ This document is for **Sheer Health engineers** who need to build and publish ou
 2. **Set the Playwright version you want to patch**
 
    ```sh
-   export PLAYWRIGHT_VERSION=v1.52.5
+   export PLAYWRIGHT_VERSION=v1.52.0
    export PATCHRIGHT_SEMVER=1.52.5
    ```
 
